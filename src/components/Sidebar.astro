@@ -1,0 +1,55 @@
+---
+const items = [
+	{
+		title: "About",
+		body: "このブログのサイドバー領域です。プロフィールや説明を入れられます。"
+	},
+	{
+		title: "Recent",
+		body: "",
+		list: ["記事タイトル1", "記事タイトル2", "記事タイトル3"]
+	},
+	{
+		title: "Note",
+		body: "リンクや広告などをここに追加できます。"
+	}
+];
+---
+
+<aside class="sidebar">
+	{items.map((item) => (
+		<div class="sidebar-block">
+			<h2>{item.title}</h2>
+
+			{item.body && <p>{item.body}</p>}
+
+			{item.list && (
+				<ul>
+					{item.list.map((text) => (
+						<li>{text}</li>
+					))}
+				</ul>
+			)}
+		</div>
+	))}
+</aside>
+
+<style>
+	.sidebar {
+		width: 260px;
+		max-width: 30%;
+		padding: 2em;
+	}
+
+	.sidebar-block {
+		margin-bottom: 1.5rem;
+		padding: 1rem;
+		border: 1px solid rgba(var(--gray), 0.2);
+		border-radius: 8px;
+	}
+
+	.sidebar-block h2 {
+		margin: 0 0 0.5rem 0;
+		font-size: 1rem;
+	}
+</style>
