@@ -34,6 +34,11 @@ const posts = (await getCollection('blog')).sort(
         margin: 0;
       }
 
+      .content h1 {
+        font-size: 1.3rem;
+        font-weight: 400;
+      }
+
       ul {
         display: flex;
         flex-direction: column;
@@ -92,7 +97,7 @@ const posts = (await getCollection('blog')).sort(
 
     <main>
       <section class="content">
-	    <heading>"新着順"</heading>
+	    <h1>"新着順"</h1>
 
         <ul>
           {
